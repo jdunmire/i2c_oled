@@ -14,6 +14,9 @@ Build and Install
 ----------------------
   * Copy `paths.tmpl` to `paths.inv`.
   * Adjust the paths in `paths.inv` for your setup.
+  * To rotate the image on the display 180 degrees, define
+      `OLED_ROTATE_180` in `include/user_config.h`
+
   * Build:
 
         $ make
