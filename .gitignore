@@ -1,0 +1,9 @@
+# editor workspace and backup files
+*.swp
+
+# project build results
+build/
+firmware/
+
+# local configuration files
+paths.inc
