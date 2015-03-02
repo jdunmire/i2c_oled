@@ -114,7 +114,7 @@ OLED_SetPos(unsigned char x1, unsigned char y1)
 
     OLED_writeCmd(0xb0+y);
     OLED_writeCmd(((x&0xf0)>>4)|0x10);
-    OLED_writeCmd((x&0x0f)|0x01);
+    OLED_writeCmd((x&0x0f)); //|0x01);
 }
 
 void ICACHE_FLASH_ATTR
