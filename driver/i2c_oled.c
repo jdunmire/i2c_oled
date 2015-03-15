@@ -105,7 +105,7 @@ void ICACHE_FLASH_ATTR
 OLED_SetPos(unsigned char x1, unsigned char y1)
 {
 #ifdef OLED_ROTATE_180
-    unsigned char y = 7 - y1;
+    unsigned char y = 8 - y1;
     unsigned char x = 127 - x1;
 #else
     unsigned char y = y1;
@@ -269,8 +269,8 @@ void ICACHE_FLASH_ATTR
 OLED_DrawBMP(
         unsigned char x0,
         unsigned char y0,
-        unsigned char x1,
-        unsigned char y1,
+        unsigned char numX,
+        unsigned char numY,
         unsigned char bitmap[]
         )
 {
@@ -278,22 +278,23 @@ OLED_DrawBMP(
     unsigned char x ,y;
 
 #ifdef OLED_ROTATE_180
-    unsigned int max = ((x1 - x0) * (y1 - y0)) - 1;
+    unsigned int max = ((numX) * (numY)) - 1;
 
-    for (y = y1 - 1; y >= y0; y--)
+    for (y = (y0 + 1); y <= (y0 + numY); y++)
     {
-        OLED_SetPos(x1, y);
-        for (x = x0; x < x1; x++)
+        OLED_SetPos((numX + x0), y);
+        j = 0;
+        for (x = (x0 + numX); x > x0; x--)
         {
-            OLED_writeDat(reverse(bitmap[max - j++]));
+            OLED_writeDat(reverse(bitmap[(numX * y) - j++]));
         }
     }
 
 #else
-    for (y = y0; y < y1; y++)
+    for (y = y0; y < (y0 + numY); y++)
     {
         OLED_SetPos(x0, y);
-        for (x = x0; x < x1; x++)
+        for (x = x0; x < (x0 + numX); x++)
         {
             OLED_writeDat(reverse(bitmap[j++]));
         }

@@ -20,7 +20,7 @@
 //#define OLED_ADDRESS  0x7a // D/C->Vcc
 
 void OLED_CLS(void);
-void OLED_DrawBMP(unsigned char x0,unsigned char y0,unsigned char x1,unsigned char y1,unsigned char BMP[]);
+void OLED_DrawBMP(unsigned char x0,unsigned char y0,unsigned char numX,unsigned char numY,unsigned char BMP[]);
 void OLED_Fill(unsigned char fill_Data);
 void OLED_Init(void);
 void OLED_OFF(void);
