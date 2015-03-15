@@ -175,6 +175,7 @@ OLED_ShowStr(unsigned char x, unsigned char y, unsigned char ch[], unsigned char
         {
 #ifdef OLED_ROTATE_180
             cStartCol = 6;
+            y += 1;
 #endif
             while (ch[index] != '\0')
             {
@@ -203,6 +204,7 @@ OLED_ShowStr(unsigned char x, unsigned char y, unsigned char ch[], unsigned char
         {
 #ifdef OLED_ROTATE_180
             cStartCol = 8;
+            y += 1;
 #endif
             while (ch[index] != '\0')
             {
@@ -282,11 +284,11 @@ OLED_DrawBMP(
 
     for (y = (y0 + 1); y <= (y0 + numY); y++)
     {
-        OLED_SetPos((numX + x0), y);
+        OLED_SetPos(((numX + x0) - 1), y);
         j = 0;
         for (x = (x0 + numX); x > x0; x--)
         {
-            OLED_writeDat(reverse(bitmap[(numX * y) - j++]));
+            OLED_writeDat(reverse(bitmap[((numX * y) - 1) - j++]));
         }
     }
 
