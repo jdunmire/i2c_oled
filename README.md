@@ -1,4 +1,4 @@
-i2c_oled - 128x64 OLED display driver of ESP8622
+i2c_oled - 128x64 OLED display driver for ESP8622
 =======================================================
 i2c_oled is a driver and example app for an 128x64 OLED display.
 
