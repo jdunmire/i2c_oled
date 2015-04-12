@@ -3,6 +3,26 @@
  *
  * Uses all of the i2c_oled functions.
  *
+ * Copyright 2015 Jerry Dunmire
+ * jedunmire+i2c_oled AT gmail
+ * This file is part of i2c_oled
+ * 
+ * i2c_oled is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * i2c_oled is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with i2c_oled.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Files that are not part of i2c_oled are clearly identified at the top
+ * of each of the files. These files are distributed under terms noted in each
+ * of the files.
  */
 #include <ets_sys.h>
 #include <osapi.h>

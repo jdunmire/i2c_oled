@@ -2,16 +2,22 @@ i2c_oled - 128x64 OLED display driver of ESP8622
 =======================================================
 i2c_oled is a driver and example app for an 128x64 OLED display.
 
-This code improves on other versions of the i2c_oled driver by adding
-a compile option to rotation the display 180 degrees and cleaning up
-errors.
+This code improves on other versions of the i2c_oled driver by:
+
+  * adding a compile option to rotation the display 180 degrees
+  * cleaning up errors
+  * improving bitmap display code
+  * including bitmap generation tool
 
 Prerequisits
 ------------
   * https://github.com/pfalcon/esp-open-sdk
 
+
 Build and Install
 ----------------------
+To build and install the test program:
+
   * Copy `paths.tmpl` to `paths.inv`.
   * Adjust the paths in `paths.inv` for your setup.
   * To rotate the image on the display 180 degrees, define
@@ -25,10 +31,13 @@ Build and Install
 
         $ make flash
 
+The test program (`user/testDisplay.h`) demonstrates each of the OLED
+functions.
 
 License
 -------
 Copyright 2015 Jerry Dunmire
+jedunmire+i2c_oled AT gmail
 This file is part of i2c_oled
 
 i2c_oled is free software: you can redistribute it and/or modify
@@ -44,7 +53,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with i2c_oled.  If not, see <http://www.gnu.org/licenses/>.
 
-Files that are not part of appTemplate are clearly identified at the top
+Files that are not part of i2c_oled are clearly identified at the top
 of each of the files. These files are distributed under terms noted in each
 of the files.
 
